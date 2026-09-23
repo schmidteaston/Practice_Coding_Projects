@@ -1,0 +1,64 @@
+.header{
+    
+    font-family: Arial;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(199, 191, 191);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 3px solid black;
+    border-radius: 5px;
+
+}
+    .header-text{
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+        height: 50%;
+        margin-top: 0%;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+        padding-top: 28px;
+        padding-left: 0px
+    }
+    .login-boxes{
+        display: inline-block;
+        margin-right: 9px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        
+    }
+    .Welcome-Message{
+        font-size: 30px;
+        font-weight: bold;
+        color: black;
+        text-align: left;
+        padding-left: 0px;
+        padding-right : 0px;
+        margin-top: 8px;
+        margin-bottom: 5px;
+    }
+    .title-span{
+        color: #012F5A;
+    }
+
+    .title-span:hover{
+        text-decoration: underline;
+    }
+    .username-input, .password-input{
+        display: block;
+        margin: 2px;
+        padding: 10px;
+        width: 200px;
+        border-radius: 5px;
+        border: 3px solid #000000;
+    }
+    .main-logo{
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        margin-left: 10px;
+        margin-top: 5px;
+    }
+
