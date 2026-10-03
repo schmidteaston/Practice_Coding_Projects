@@ -94,10 +94,10 @@ int main() {
             char playerchoice;
             cout << "Would you like to hit or stand? (h/s): ";
             cin >> playerchoice;
-            cout << endl;
 
             while (playerchoice != 'h' && playerchoice != 's') {
                 cout << "You Entered an invalid choice, please enter h/s" << endl;
+                break;
             }
 
             if (playerchoice == 's') {
@@ -156,14 +156,15 @@ int main() {
 
         cout << "You had: " << playerTotal << endl;
 
-        if (playerTotal > dealerTotal && playerTotal <=21) {
-            cout << "You win!" << endl << endl;
-            userBalance += (wager*2);
-        }
-        else if (playerTotal == 21) {
+        if (playerTotal == 21) {
             cout << "Blackjack! You win!" << endl << endl;
             userBalance += (wager*2.5);
         }
+        else if (playerTotal > dealerTotal && playerTotal <=21) {
+            cout << "You win!" << endl << endl;
+            userBalance += (wager*2);
+        }
+
         else if (playerTotal == dealerTotal) {
             cout << "You Tied!" << endl << endl;
             userBalance += wager;
