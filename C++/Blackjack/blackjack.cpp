@@ -92,10 +92,17 @@ int main() {
                 break;
             }
             char playerchoice;
-            cout << "Would you like to hit or stand? (h/s): ";
-            cin >> playerchoice;
 
-            while (playerchoice != 'h' && playerchoice != 's') {
+            if (playerTotal == 10 or playerTotal == 11) {
+                cout << "Would you like to hit, stand, or double down? (h/s/d): ";
+                cin >> playerchoice;
+            }
+            else {
+                cout << "Would you like to hit or stand? (h/s): ";
+                cin >> playerchoice;
+            }
+
+            while (playerchoice != 'h' && playerchoice != 's' && playerchoice != 'd') {
                 cout << "You Entered an invalid choice, please enter h/s" << endl;
                 break;
             }
@@ -122,6 +129,22 @@ int main() {
                     break;
                 }
                 cout << "Your hand is now: " << playerTotal << endl << endl;
+            }
+
+            if (playerchoice == 'd') {
+                wager *= 2;
+                int playerHit = cardRank(cardGenerator);
+                int playerHitValue = getCardValue(playerHit);
+                playerTotal += playerHitValue;
+
+                if (playerHit == 1) {
+                    playerAces++;
+                }
+                while (playerTotal > 21 && playerAces > 0) {
+                    playerTotal -= 10;
+                    playerAces--;
+                }
+                break;
             }
         }
 
